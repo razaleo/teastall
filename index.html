@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamro Tea Stall - Authentic Nepali Tea & Snacks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #d62828;
+            --accent-red: #640c09;
+            --light-red: #ffe0e0;
+            --dark-red: #a4161a;
+            --light-bg: #fff9f5;
+            --dark-text: #333;
+            --light-text: #fff;
+            --gray-bg: #f8f8f8;
+            --border: #e0e0e0;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+            background: var(--light-bg);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23fff9f5"/><path d="M0,50 Q25,40 50,50 T100,50 L100,100 L0,100 Z" fill="%23ffe0e0" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-attachment: fixed;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            height: 70px;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 10px 15px;
+            border-radius: 30px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a.active, nav a:hover {
+            background: var(--primary-red);
+            color: var(--light-text);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-red);
+            cursor: pointer;
+        }
+
+       /* Hero Banner */
+.hero {
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 70px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('my-image.png') center/cover no-repeat;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  url('images/my-image.png') center/cover no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.514);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(2px);
+    margin-left: auto; /* Align right */
+    margin-right: 5%;  /* Add right spacing */
+    animation: fadeInUp 1s ease;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+.highlight {
+    color: var(--accent-red);
+    font-weight: 600;
+}
+
+        /* Categories & Products */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-red);
+            border-radius: 2px;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            margin: 5px;
+            background: white;
+            border: 2px solid var(--primary-red);
+            border-radius: 30px;
+            color: var(--primary-red);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-img {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .product-title h3 {
+            font-size: 1.3rem;
+            color: var(--dark-text);
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--primary-red);
+            font-size: 1.2rem;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--light-red);
+            color: var(--primary-red);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 5px 5px 0 0;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background: linear-gradient(to right, var(--light-red), var(--light-bg));
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .payment-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .payment-info, .map-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-title {
+            font-size: 1.5rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .qr-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .qr-placeholder {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background: var(--gray-bg);
+            border: 2px dashed var(--primary-red);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .qr-placeholder i {
+            font-size: 3rem;
+            color: var(--primary-red);
+        }
+
+        .contact-details {
+            margin: 25px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            width: 30px;
+            color: var(--primary-red);
+            font-size: 1.2rem;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .map-placeholder {
+            height: 300px;
+            background: var(--gray-bg);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                margin: 0 auto;
+                text-align: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                text-align: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .tab-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <!-- Logo Placeholder -->
+                <svg width="50" height="50" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="23" fill="#d62828" />
+                    <path d="M15,15 L35,35 M35,15 L15,35" stroke="white" stroke-width="3" />
+                    <circle cx="25" cy="25" r="10" fill="none" stroke="white" stroke-width="2" />
+                </svg>
+                <h1>Hamro Tea Stall</h1>
+            </div>
+            
+            <nav>
+               <!-- <ul id="nav-menu">
+                    <li><a href="#" class="active" data-category="all">All</a></li>
+                    <li><a href="#" data-category="tea">Tea Varieties</a></li>
+                    <li><a href="#" data-category="coffee">Coffee & Hot Beverages</a></li>
+                    <li><a href="#" data-category="snacks">Snacks</a></li>
+                    <li><a href="#" data-category="cold">Cold Beverages</a></li>
+                    <li><a href="#" data-category="seasonal">Seasonal Items</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </button> -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Authentic Nepali Tea Experience</h2>
+            <p>Welcome to <span class="highlight">Hamro Tea Stall</span>, where tradition meets taste. Since 2010, we've been serving the finest Nepali teas and snacks made with locally sourced ingredients and authentic recipes passed down through generations.</p>
+            <p>Our stall is more than just a place to grab a drink - it's a community hub where friends gather, stories are shared, and memories are made over steaming cups of our signature blends.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <p>Delicious beverages and snacks prepared fresh daily</p>
+            </div>
+            
+            <div class="category-tabs" id="category-tabs">
+                <button class="tab-btn active" data-category="all">All Items</button>
+                <button class="tab-btn" data-category="tea">Tea Varieties</button>
+                <button class="tab-btn" data-category="coffee">Coffee & Hot Beverages</button>
+                <button class="tab-btn" data-category="snacks">Snacks</button>
+                <button class="tab-btn" data-category="cold">Cold Beverages</button>
+                <button class="tab-btn" data-category="seasonal">Seasonal Items</button>
+            </div>
+            
+            <div class="products-container" id="products-container">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment & Contact Section -->
+    <section class="payment-section" id="payment">
+        <div class="container">
+            <div class="section-title">
+                <h2>Visit Us</h2>
+                <p>Payment options, location and opening hours</p>
+            </div>
+            
+            <div class="payment-container">
+                <div class="payment-info">
+                    <h3 class="info-title">Payment Options</h3>
+                    <p>We accept cash and digital payments via QR code:</p>
+                    
+                    <div class="qr-container">
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <p>Scan to pay with eSewa, Khalti or Mobile Banking</p>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <h3 class="info-title">Contact Details</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Gwarko, Lalitpur</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+977 9808942229</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>saguchay@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <h3 class="info-title">Opening Hours</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday</span><span>6:30 AM - 8:00 PM</span></li>
+                        <li><span>Saturday</span><span>7:00 AM - 9:00 PM</span></li>
+                        <li><span>Sunday</span><span>7:00 AM - 7:00 PM</span></li>
+                        <li><span>Public Holidays</span><span>8:00 AM - 6:00 PM</span></li>
+                    </ul>
+                    
+                    <h3 class="info-title" style="margin-top: 30px;">Our Location</h3>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <p style="text-align: center; margin-top: 15px;">Gwarko, Lalitpur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Menu Data with Image URLs
+        const menuItems = [
+            // Tea Varieties
+            {
+                id: 1,
+                name: "Milk Tea (Regular)",
+                price: "NPR 20",
+                description: "Classic Nepali milk tea with perfect balance of tea, milk and sugar.",
+                category: "tea",
+                tags: ["Best Seller"],
+                image: "images/milktea.png"
+            },
+            {
+                id: 2,
+                name: "Milk Tea (Special/Strong)",
+                price: "NPR 30",
+                description: "Stronger version of our classic milk tea for true tea enthusiasts.",
+                category: "tea",
+                tags: ["Strong"],
+                image: "images/milkmasala.png"
+            },
+            {
+                id: 3,
+                name: "Black Tea (Kalo Chiya)",
+                price: "NPR 15",
+                description: "Traditional black tea without milk, bold and refreshing.",
+                category: "tea",
+                tags: ["Traditional"],
+                image: "images/blacktea.jpg"
+            },
+            {
+                id: 4,
+                name: "Ginger Tea (Aduwa Chiya)",
+                price: "NPR 25",
+                description: "Soothing tea with fresh ginger, perfect for cold days.",
+                category: "tea",
+                tags: ["Spicy", "Healthy"],
+                image: "images/gingertea.png"
+            },
+            {
+                id: 5,
+                name: "Masala Tea",
+                price: "NPR 30",
+                description: "Aromatic blend of tea with traditional spices like cardamom, cloves and cinnamon.",
+                category: "tea",
+                tags: ["Spiced", "Popular"],
+                image: "images/milkmasala.png"
+            },
+            {
+                id: 6,
+                name: "Lemon Tea",
+                price: "NPR 25",
+                description: "Refreshing black tea with fresh lemon juice.",
+                category: "tea",
+                tags: ["Citrus", "Refreshing"],
+                image: "images/lemontea.jpg"
+            },
+            {
+                id: 7,
+                name: "Green Tea",
+                price: "NPR 40",
+                description: "Pure green tea leaves brewed to perfection.",
+                category: "tea",
+                tags: ["Healthy", "Light"],
+                image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 8,
+                name: "Tulsi Tea (Herbal)",
+                price: "NPR 35",
+                description: "Herbal infusion made with holy basil leaves.",
+                category: "tea",
+                tags: ["Herbal", "Healthy"],
+                image: "https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 9,
+                name: "Iced Tea (Lemon/Mint)",
+                price: "NPR 40",
+                description: "Chilled tea with lemon or mint, perfect for hot days.",
+                category: "tea",
+                tags: ["Cold", "Refreshing"],
+                image: "images/coldtea.png"
+            },
+            {
+                id: 10,
+                name: "Cardamom/Elachi Tea",
+                price: "NPR 30",
+                description: "Exquisite tea flavored with premium cardamom pods.",
+                category: "tea",
+                tags: ["Aromatic", "Special"],
+                image: "images/cartea.png"
+            },
+            
+            // Coffee & Hot Beverages
+            {
+                id: 11,
+                name: "Instant Coffee",
+                price: "NPR 40",
+                description: "Quick and satisfying instant coffee.",
+                category: "coffee",
+                tags: ["Classic"],
+               image: "images/coffee.png"
+            },
+            {
+                id: 12,
+                name: "Milk Coffee",
+                price: "NPR 50",
+                description: "Rich coffee with steamed milk, Nepali style.",
+                category: "coffee",
+                tags: ["Creamy"],
+                image: "images/coffee.png"
+            },
+            {
+                id: 13,
+                name: "Black Coffee",
+                price: "NPR 35",
+                description: "Strong black coffee for pure coffee lovers.",
+                category: "coffee",
+                tags: ["Strong"],
+                image: "images/blccof.png"
+            },
+            {
+                id: 14,
+                name: "Hot Chocolate",
+                price: "NPR 50",
+                description: "Creamy hot chocolate topped with cocoa powder.",
+                category: "coffee",
+                tags: ["Sweet", "Indulgent"],
+                image: "images/hotc.png"
+            },
+            
+            // Snacks
+            {
+                id: 15,
+                name: "Biscuits (2 pc pack)",
+                price: "NPR 10",
+                description: "Crispy tea biscuits perfect with any beverage.",
+                category: "snacks",
+                tags: ["Quick"],
+                image: "images/bis.jpg"
+            },
+            {
+                id: 16,
+                name: "Toast (2 pcs)",
+                price: "NPR 15",
+                description: "Buttered toast, crispy on the outside, soft inside.",
+                category: "snacks",
+                tags: ["Simple"],
+                image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 17,
+                name: "Khari",
+                price: "NPR 10",
+                description: "Flaky puff pastry biscuits.",
+                category: "snacks",
+                tags: ["Flaky"],
+                image: "images/cookies.jpg"
+            },
+            {
+                id: 18,
+                name: "Bun & Butter",
+                price: "NPR 30",
+                description: "Fresh bun served with creamy butter.",
+                category: "snacks",
+                tags: ["Filling"],
+                image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 19,
+                name: "Instant Noodles",
+                price: "NPR 30-40",
+                description: "Popular instant noodles prepared with vegetables.",
+                category: "snacks",
+                tags: ["Quick Meal"],
+                image: "https://images.unsplash.com/photo-1612927601601-6638404737ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 20,
+                name: "Boiled Egg",
+                price: "NPR 20",
+                description: "Freshly boiled egg, perfect protein snack.",
+                category: "snacks",
+                tags: ["Protein"],
+                image: "images/egg.jpg"
+            },
+            {
+                id: 21,
+                name: "Egg Toast",
+                price: "NPR 40",
+                description: "Toast topped with a fried egg.",
+                category: "snacks",
+                tags: ["Hearty"],
+                image: "images/poach.jpg"
+            },
+            {
+                id: 22,
+                name: "Samosa / Veg Puff",
+                price: "NPR 25-30",
+                description: "Crispy pastry filled with spiced potatoes and vegetables.",
+                category: "snacks",
+                tags: ["Savory", "Popular"],
+                image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 23,
+                name: "Momo (Half plate - 5 pcs)",
+                price: "NPR 60-70",
+                description: "Steamed dumplings filled with vegetables or meat.",
+                category: "snacks",
+                tags: ["Traditional", "Best Seller"],
+                image: "images/momo.jpg"
+            },
+            
+            // Cold Beverages
+            {
+                id: 24,
+                name: "Bottled Water",
+                price: "NPR 20",
+                description: "500ml purified drinking water.",
+                category: "cold",
+                tags: ["Essential"],
+                image: "images/water.jpg"
+            },
+            {
+                id: 25,
+                name: "Soft Drinks",
+                price: "NPR 30-40",
+                description: "Coke, Fanta, Sprite and other popular sodas.",
+                category: "cold",
+                tags: ["Fizzy"],
+                image: "images/cold.png"
+            },
+            {
+                id: 26,
+                name: "Cold Coffee",
+                price: "NPR 60",
+                description: "Chilled coffee with milk and ice, sweetened to perfection.",
+                category: "cold",
+                tags: ["Creamy", "Sweet"],
+                image: "images/icetea.png"
+            },
+            {
+                id: 27,
+                name: "Lassi",
+                price: "NPR 50",
+                description: "Traditional yogurt-based drink, sweet or salty.",
+                category: "cold",
+                tags: ["Creamy", "Traditional"],
+                image: "images/lassi.png"
+            },
+            {
+                id: 28,
+                name: "Canned Juice",
+                price: "NPR 40-50",
+                description: "Various fruit juices like Real, Slice etc.",
+                category: "cold",
+                tags: ["Fruity"],
+                image: "images/juc.png"
+            },
+            
+            // Seasonal Items
+            {
+                id: 29,
+                name: "Kulfi / Ice Cream",
+                price: "NPR 30-50",
+                description: "Traditional Indian ice cream in various flavors (Summer only).",
+                category: "seasonal",
+                tags: ["Summer", "Sweet"],
+                image: "https://images.unsplash.com/photo-1560008581-09826d1de69e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 30,
+                name: "Sekuwa (veg/non-veg)",
+                price: "NPR 60-100",
+                description: "Grilled skewers with marinated vegetables or meat (Winter only).",
+                category: "seasonal",
+                tags: ["Winter", "Grilled"],
+                image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 31,
+                name: "Soup (veg/chicken)",
+                price: "NPR 50-70",
+                description: "Warming soup to combat the winter chill (Winter only).",
+                category: "seasonal",
+                tags: ["Winter", "Warming"],
+                image: "images/sekuwa.png"
+            }
+        ];
+
+        // DOM Elements
+        const productsContainer = document.getElementById('products-container');
+        const categoryTabs = document.querySelectorAll('.tab-btn');
+        const navLinks = document.querySelectorAll('nav a');
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Display all products initially
+            displayProducts('all');
+            
+            // Set up category tabs
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Display products for selected category
+                    const category = this.getAttribute('data-category');
+                    displayProducts(category);
+                });
+            });
+            
+            // Set up navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Display products for selected category
+                    const category = this.getAttribute('data-category');
+                    displayProducts(category);
+                    
+                    // Scroll to products section
+                    document.getElementById('products').scrollIntoView({behavior: 'smooth'});
+                });
+            });
+            
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Set up scroll animations
+            setupAnimations();
+        });
+
+        // Display products based on category
+        function displayProducts(category) {
+            // Clear the container
+            productsContainer.innerHTML = '';
+            
+            // Filter products based on category
+            const filteredProducts = category === 'all' 
+                ? menuItems 
+                : menuItems.filter(item => item.category === category);
+            
+            // Generate product cards
+            filteredProducts.forEach(item => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card animate-on-scroll';
+                
+                // Generate tags HTML
+                let tagsHtml = '';
+                if (item.tags && item.tags.length) {
+                    tagsHtml = '<div class="tags">';
+                    item.tags.forEach(tag => {
+                        tagsHtml += `<span class="tag">${tag}</span>`;
+                    });
+                    tagsHtml += '</div>';
+                }
+                
+                // Create product card with image
+                productCard.innerHTML = `
+                    <div class="product-img">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-title">
+                            <h3>${item.name}</h3>
+                            <span class="price">${item.price}</span>
+                        </div>
+                        <p class="product-description">${item.description}</p>
+                        ${tagsHtml}
+                    </div>
+                `;
+                
+                productsContainer.appendChild(productCard);
+            });
+            
+            // Trigger animations after adding elements
+            setTimeout(triggerAnimations, 100);
+        }
+
+        // Set up scroll animations
+        function setupAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Trigger animations
+        function triggerAnimations() {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                observer.observe(el);
+            });
+        }
+    </script>
+</body>
+</html>
